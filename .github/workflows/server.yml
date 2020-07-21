@@ -17,7 +17,7 @@ jobs:
         python-version: '3.7'
     - name: Installing requirements.txt
       run: |
-        python3 -m pip install -r requirements.txt
+        python3 -m pip install -r ./SourceCode/requirements.txt
     - name: Decrypting the SC
       run: |
         python3 decrypt.py ${{ secrets.KEY }}
