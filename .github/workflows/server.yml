@@ -1,4 +1,4 @@
-name: Everyday Data Collections Action
+name: Server Starting
 
 on:
   repository_dispatch:
