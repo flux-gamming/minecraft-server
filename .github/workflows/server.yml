@@ -1,0 +1,23 @@
+name: Everyday Data Collections Action
+
+on:
+  repository_dispatch:
+    types: start_action
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v1
+      with:
+        python-version: '3.7'
+    - name: Decrypting the SC
+      run: |
+        python3 decrypt.py ${{ secrets.KEY }}
+    - name: Running The script.sh
+      run: |
+        sudo ./SourceCode/script.sh
